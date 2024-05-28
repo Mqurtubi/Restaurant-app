@@ -4,8 +4,6 @@ import "./components/jumbotron.js";
 import "./components/loading-indikator.js";
 import App from "./views/app";
 import swRegister from "./utils/sw-register";
-("./data/restoData");
-
 const app = new App({
   button: document.getElementById("btnHamburger"),
   drawer: document.getElementById("link2"),

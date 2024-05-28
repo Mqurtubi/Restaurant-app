@@ -280,11 +280,19 @@ footer {
   }
 }
 @media screen and (max-width: 1300px) {
-  main {
+  #mainContent {
     #aboutCafe {
       flex-direction: column-reverse;
       #deskripsi {
         width: 100%;
+      }
+    }
+    #restaurantDetail {
+      #restaurant-content-1 {
+        grid-template-columns: 780px;
+      }
+      #restaurant-content-2 {
+        grid-template-columns: 780px;
       }
     }
   }
@@ -295,6 +303,27 @@ footer {
       #link a {
         font-size: 18px;
       }
+    }
+  }
+  #mainContent {
+    #restaurantDetail {
+      #restaurant-content-1 {
+        grid-template-columns: 80%;
+        .restaurant-img {
+          img {
+            width: 80%;
+          }
+        }
+      }
+      #restaurant-content-2 {
+        grid-template-columns: 80%;
+      }
+    }
+    #review {
+      width: 90%;
+    }
+    #formReview {
+      width: 90%;
     }
   }
 }
