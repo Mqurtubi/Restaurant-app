@@ -2,7 +2,6 @@ import RestoResource from "../../data/restoData";
 import "../../components/restaurant-list.js";
 import "../../components/restaurant-item.js";
 import "../../components/jumbotron.js";
-import { async } from "regenerator-runtime";
 const RestaurantItem = {
   async render() {
     return `
@@ -17,7 +16,7 @@ const RestaurantItem = {
         </div>
       </div>
       <h2>Explore Restaurant</h2>
-    <restaurant-list style="display:none"></restaurant-list>
+    <restaurant-list style="display:none" id="list"></restaurant-list>
     <loading-animasi></loading-animasi>
     
         `;

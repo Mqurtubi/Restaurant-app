@@ -11,6 +11,7 @@ const app = new App({
   drawer: document.getElementById("link2"),
   content: document.querySelector("#mainContent"),
   exit: document.getElementById("btnExit"),
+  skip: document.getElementById("#skip"),
 });
 window.addEventListener("hashchange", () => {
   app.renderPage();

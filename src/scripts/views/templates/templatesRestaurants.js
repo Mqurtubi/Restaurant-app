@@ -24,8 +24,9 @@ const createRestaurantDetailTemplate = (restaurant) => `
     </div>
     <div class="restaurant-deskripsi">
     <p class="judul">${restaurant.name}</p>
-    <p class="tempat">${restaurant.city}</p>
-    <p class="rating">Rating <span>${restaurant.rating}</span></p>
+    <p class="tempat">Kota :${restaurant.city}</p>
+    <p class="alamat">Alamat : ${restaurant.address}</p>
+    <p class="rating">Rating : <span>${restaurant.rating}</span></p>
     <p class="deskripsi">
     ${restaurant.description}</p>
     </div>

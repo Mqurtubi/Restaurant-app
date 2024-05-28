@@ -52,6 +52,8 @@ class RestaurantItem extends HTMLElement {
         padding-block: 7px;
         text-decoration:none;
         color: black;
+        display:inline-block;
+        padding:22px;
         transition:all 0.2s ease-in-out;
       }
       restaurant-item .judul a:hover {
