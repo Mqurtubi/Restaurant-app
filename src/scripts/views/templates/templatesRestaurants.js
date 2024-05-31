@@ -3,7 +3,9 @@ import CONFIG from "../../globals/CONFIG";
 const createRestaurantListTemplate = (restaurant) => `
     <p class="tempat">${restaurant.city}</p>
     <div class="restaurant-img">
-        <img src="${CONFIG.BASE_IMAGE_URL.MEDIUM(restaurant.pictureId)}"
+        <img loading="lazy" src="${CONFIG.BASE_IMAGE_URL.MEDIUM(
+          restaurant.pictureId
+        )}"
         alt="gambar restauran ${restaurant.name}"/>
     </div>
     <div class="restaurant-deskripsi">
@@ -69,12 +71,12 @@ const createReviewTemplate = (reviews) => {
 };
 
 const createLikeButtonTemplate = () => `
-    <button aria-label="like restaurant" id="likeButton" class="like">
+    <button aria-label="like this restaurant" id="likeButton" class="like">
         <i class="fa fa-heart-o" aria-hidden="true"></i>
     </button>
 `;
 const createLikedButtonTemplate = () => `
-    <button aria-label="unlike restaurant" id="likeButton" class="like">
+    <button aria-label="unlike this restaurant" id="likeButton" class="like">
         <i class="fa fa-heart" aria-hidden="true"></i>
     </button>
 `;

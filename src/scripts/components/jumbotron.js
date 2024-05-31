@@ -26,7 +26,16 @@ class Jumbtron extends HTMLElement {
     this.innerHTML += `
     ${this._style.outerHTML}
     <div id="jumbotron">
-      <img src="./images/heros/hero-image_1.jpg" width="450" alt="" />
+    <picture>
+    <!-- Versi gambar untuk layar seluler -->
+    <source media="(max-width: 768px)" srcset="./images/heros/hero-image_1_mobile.jpg">
+  
+    <!-- Versi gambar untuk desktop -->
+    <source media="(min-width: 769px)" srcset="./images/heros/hero-image_1_desktop.jpg">
+  
+    <!-- Gambar default (fallback) -->
+    <img loading="lazy" src="./images/heros/hero-image_1.jpg" alt="Hero Image">
+  </picture>
     </div>`;
   }
 }

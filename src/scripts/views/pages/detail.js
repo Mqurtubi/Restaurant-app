@@ -5,7 +5,8 @@ import {
   createRestaurantDetailTemplate,
   createReviewTemplate,
 } from "../templates/templatesRestaurants";
-import LikeButtonInitiator from "../../utils/like-button-initiator";
+import LikeButtonInitiator from "../../utils/like-button-presenter";
+import FavoriteRestaurantIdb from "../../data/favorite-restaurant";
 
 const Detail = {
   async render() {
@@ -62,6 +63,7 @@ const Detail = {
 
     LikeButtonInitiator.init({
       likeButtonContainer: document.getElementById("likeButtonContainer"),
+      favoriteRestaurants: FavoriteRestaurantIdb,
       restaurant: {
         id: restaurant.id,
         name: restaurant.name,
