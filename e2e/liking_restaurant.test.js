@@ -14,4 +14,10 @@ Scenario("test something", ({ I }) => {
   I.seeElement("#likeButton");
   I.click("#likeButton");
   I.wait(5);
+  I.seeElement("#formReview");
+  I.fillField("#namaReview", "qurtubi");
+  I.fillField("#pesanReview", "layanan bagus");
+  I.wait(5);
+  I.click("input[type=submit]");
+  I.wait(2);
 });
