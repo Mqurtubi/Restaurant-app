@@ -10,7 +10,7 @@ const createRestaurantListTemplate = (restaurant) => `
     </div>
     <div class="restaurant-deskripsi">
         <p class="rating">Rating <span>${restaurant.rating}</span></p>
-        <p class="judul"><a href="/#/detail/${restaurant.id}">${
+        <p class="judul"><a href="#/detail/${restaurant.id}">${
   restaurant.name
 }</a></p>
         <p class="deskripsi">
