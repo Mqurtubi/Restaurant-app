@@ -2,13 +2,15 @@ class RestaurantList extends HTMLElement {
   constructor() {
     super();
     this._restaurantList = [];
-    this._style = document.createElement("style");
+    this._style = document.createElement('style');
   }
+
   setRestaurantList(value) {
     this._restaurantList = value;
 
     this.render();
   }
+
   _updateStyle() {
     this._style.textContent = `
     restaurant-list{
@@ -50,19 +52,21 @@ class RestaurantList extends HTMLElement {
         }
     }`;
   }
+
   connectedCallback() {
     this.render();
   }
+
   render() {
     this._updateStyle();
 
     const restaurantItemELements = this._restaurantList.map((item) => {
-      const restaurant = document.createElement("restaurant-item");
+      const restaurant = document.createElement('restaurant-item');
       restaurant.setRestaurant(item);
       return restaurant;
     });
-    this.innerHTML = "";
+    this.innerHTML = '';
     this.append(this._style, ...restaurantItemELements);
   }
 }
-customElements.define("restaurant-list", RestaurantList);
+customElements.define('restaurant-list', RestaurantList);

@@ -1,5 +1,5 @@
 const itActsAsFavoriteRestaurantModel = (favoriteRestaurant) => {
-  it("should return the movie that has been added", async () => {
+  it('should return the movie that has been added', async () => {
     favoriteRestaurant.putRestaurant({ id: 1 });
     favoriteRestaurant.putRestaurant({ id: 2 });
 
@@ -8,13 +8,13 @@ const itActsAsFavoriteRestaurantModel = (favoriteRestaurant) => {
     expect(await favoriteRestaurant.getRestaurant(3)).toEqual(undefined);
   });
 
-  it("should refuse a movie from being added if it does not have the correct property", async () => {
-    favoriteRestaurant.putRestaurant({ aProperty: "property" });
+  it('should refuse a movie from being added if it does not have the correct property', async () => {
+    favoriteRestaurant.putRestaurant({ aProperty: 'property' });
 
     expect(await favoriteRestaurant.getAllRestaurants()).toEqual([]);
   });
 
-  it("can return all of the movies that have been added", async () => {
+  it('can return all of the movies that have been added', async () => {
     favoriteRestaurant.putRestaurant({ id: 1 });
     favoriteRestaurant.putRestaurant({ id: 2 });
 
@@ -23,7 +23,7 @@ const itActsAsFavoriteRestaurantModel = (favoriteRestaurant) => {
       { id: 2 },
     ]);
   });
-  it("should remove favorite restaurant", async () => {
+  it('should remove favorite restaurant', async () => {
     favoriteRestaurant.putRestaurant({ id: 1 });
     favoriteRestaurant.putRestaurant({ id: 2 });
     favoriteRestaurant.putRestaurant({ id: 3 });
@@ -36,7 +36,7 @@ const itActsAsFavoriteRestaurantModel = (favoriteRestaurant) => {
     ]);
   });
 
-  it("should handle request to remove a movie even though the movie has not been added", async () => {
+  it('should handle request to remove a movie even though the movie has not been added', async () => {
     favoriteRestaurant.putRestaurant({ id: 1 });
     favoriteRestaurant.putRestaurant({ id: 2 });
     favoriteRestaurant.putRestaurant({ id: 3 });

@@ -1,14 +1,17 @@
-import { animate, stagger } from "motion";
+import { animate, stagger } from 'motion';
+
 class Loading extends HTMLElement {
   constructor() {
     super();
 
-    this._style = document.createElement("style");
+    this._style = document.createElement('style');
   }
+
   connectedCallback() {
     this.render();
     this._animasiLoading();
   }
+
   _updateStyle() {
     this._style.textContent = `
     #loading {
@@ -35,26 +38,29 @@ class Loading extends HTMLElement {
       }
     }`;
   }
+
   _emptyContent() {
-    this.innerHTML = ``;
+    this.innerHTML = '';
   }
+
   _animasiLoading() {
-    const numSegments = document.querySelectorAll(".segment").length;
+    const numSegments = document.querySelectorAll('.segment').length;
     const offset = 0.09;
 
     setTimeout(() => {
       animate(
-        ".segment",
+        '.segment',
         { opacity: [0, 1, 0] },
         {
           offset: [0, 0.1, 1],
           duration: numSegments * offset,
           delay: stagger(offset),
           repeat: Infinity,
-        }
+        },
       );
     }, 1000);
   }
+
   render() {
     this._updateStyle();
     this._emptyContent();
@@ -117,4 +123,4 @@ class Loading extends HTMLElement {
       </svg>`;
   }
 }
-customElements.define("loading-animasi", Loading);
+customElements.define('loading-animasi', Loading);

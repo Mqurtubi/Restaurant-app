@@ -1,3 +1,6 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable quotes */
+/* eslint-disable import/extensions */
 import "regenerator-runtime"; /* for async await transpile */
 import "../styles/main.scss";
 import "./components/jumbotron.js";

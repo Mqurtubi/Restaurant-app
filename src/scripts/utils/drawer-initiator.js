@@ -1,3 +1,6 @@
+/* eslint-disable object-curly-newline */
+/* eslint-disable quotes */
+/* eslint-disable no-underscore-dangle */
 const DrawerInitiator = {
   init({ button, drawer, content, exit }) {
     button.addEventListener("click", (event) => {

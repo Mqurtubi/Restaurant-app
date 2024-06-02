@@ -1,4 +1,4 @@
-import FavoriteRestaurantIdb from "../../data/favorite-restaurant";
+import FavoriteRestaurantIdb from '../../data/favorite-restaurant';
 
 const Favorite = {
   async render() {
@@ -10,7 +10,7 @@ const Favorite = {
   async afterRender() {
     (async () => {
       const data = await FavoriteRestaurantIdb.getAllRestaurants();
-      const restaurantList = document.querySelector("restaurant-list");
+      const restaurantList = document.querySelector('restaurant-list');
       restaurantList.setRestaurantList(data);
       console.log(data);
     })();

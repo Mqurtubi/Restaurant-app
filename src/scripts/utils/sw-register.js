@@ -1,18 +1,18 @@
-import { Workbox } from "workbox-window";
+import { Workbox } from 'workbox-window';
 
 const swRegister = async () => {
-  if (!("serviceWorker" in navigator)) {
-    console.log("browser ini tidak mendukung service worker");
+  if (!('serviceWorker' in navigator)) {
+    console.log('browser ini tidak mendukung service worker');
     return;
   }
 
-  const wb = new Workbox("./sw.bundle.js");
+  const wb = new Workbox('./sw.bundle.js');
 
   try {
     await wb.register();
-    console.log("service worker telah teregister");
+    console.log('service worker telah teregister');
   } catch (error) {
-    console.log("gagal register service worker", error);
+    console.log('gagal register service worker', error);
   }
 };
 

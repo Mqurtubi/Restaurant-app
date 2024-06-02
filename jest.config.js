@@ -193,8 +193,8 @@ const config = {
 
   // Whether to use watchman for file crawling
   // watchman: true,
-  setupFiles: ["fake-indexeddb/auto"],
-  testEnvironment: "jsdom",
+  setupFiles: ['fake-indexeddb/auto'],
+  testEnvironment: 'jsdom',
 };
 
 module.exports = config;

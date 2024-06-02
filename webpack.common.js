@@ -1,10 +1,12 @@
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable quotes */
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const ImageminWebpackPlugin = require("imagemin-webpack-plugin").default;
 const ImageminMozjpeg = require("imagemin-mozjpeg");
-const BundleAnalyzerPlugin =
-  require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
+
 module.exports = {
   entry: {
     app: path.resolve(__dirname, "src/scripts/index.js"),

@@ -1,17 +1,17 @@
-import { createRestaurantListTemplate } from "../views/templates/templatesRestaurants";
+import { createRestaurantListTemplate } from '../views/templates/templatesRestaurants';
 
 class RestaurantItem extends HTMLElement {
   constructor() {
     super();
     this._restaurant = {
-      id: "id",
-      name: "nama",
-      description: "deskripsi",
-      pictureId: "picture",
-      city: "kota",
+      id: 'id',
+      name: 'nama',
+      description: 'deskripsi',
+      pictureId: 'picture',
+      city: 'kota',
       rating: 0,
     };
-    this._style = document.createElement("style");
+    this._style = document.createElement('style');
   }
 
   setRestaurant(value) {
@@ -20,7 +20,7 @@ class RestaurantItem extends HTMLElement {
   }
 
   _emptyContent() {
-    this.innerHTML = "";
+    this.innerHTML = '';
   }
 
   _updateStyle() {
@@ -90,4 +90,4 @@ class RestaurantItem extends HTMLElement {
   }
 }
 
-customElements.define("restaurant-item", RestaurantItem);
+customElements.define('restaurant-item', RestaurantItem);

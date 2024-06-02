@@ -1,11 +1,11 @@
-import { openDB } from "idb";
-import CONFIG from "../globals/CONFIG";
+import { openDB } from 'idb';
+import CONFIG from '../globals/CONFIG';
 
 const { DATABASE_NAME, DATABASE_VERSION, OBJECT_STORE_NAME } = CONFIG;
 
 const dbPromise = openDB(DATABASE_NAME, DATABASE_VERSION, {
   upgrade(database) {
-    database.createObjectStore(OBJECT_STORE_NAME, { keyPath: "id" });
+    database.createObjectStore(OBJECT_STORE_NAME, { keyPath: 'id' });
   },
 });
 
@@ -20,7 +20,7 @@ const FavoriteRestaurantIdb = {
     return (await dbPromise).getAll(OBJECT_STORE_NAME);
   },
   async putRestaurant(restaurant) {
-    if (!Object.prototype.hasOwnProperty.call(restaurant, "id")) {
+    if (!Object.prototype.hasOwnProperty.call(restaurant, 'id')) {
       return;
     }
     return (await dbPromise).put(OBJECT_STORE_NAME, restaurant);

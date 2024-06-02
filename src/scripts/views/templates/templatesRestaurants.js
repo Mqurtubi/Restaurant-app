@@ -1,3 +1,12 @@
+/* eslint-disable linebreak-style */
+// eslint-disable-next-line linebreak-style
+/* eslint-disable implicit-arrow-linebreak */
+/* eslint-disable linebreak-style */
+/* eslint-disable quotes */
+/* eslint-disable indent */
+/* eslint-disable comma-dangle */
+/* eslint-disable linebreak-style */
+// eslint-disable-next-line import/no-unresolved
 import CONFIG from "../../globals/CONFIG";
 
 const createRestaurantListTemplate = (restaurant) => `
@@ -57,18 +66,16 @@ const createRestaurantDetailTemplate = (restaurant) => `
     </div> 
 </div>
 `;
-const createReviewTemplate = (reviews) => {
-  return reviews
+const createReviewTemplate = (reviews) =>
+  reviews
     .map(
-      (review) =>
-        `<div class="reviews">
+      (review) => `<div class="reviews">
       <p class="name">${review.name}</p>
       <p class="reviewText">${review.review}</p>
       <p class="date">${review.date}</p>
     </div>`
     )
     .join(" ");
-};
 
 const createLikeButtonTemplate = () => `
     <button aria-label="like this restaurant" id="likeButton" class="like">

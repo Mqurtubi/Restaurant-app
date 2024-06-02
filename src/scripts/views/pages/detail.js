@@ -1,12 +1,12 @@
-import UrlParser from "../../routes/url-parser";
-import RestoData from "../../data/restoData";
+import UrlParser from '../../routes/url-parser';
+import RestoData from '../../data/restoData';
 import {
   createLikeButtonTemplate,
   createRestaurantDetailTemplate,
   createReviewTemplate,
-} from "../templates/templatesRestaurants";
-import LikeButtonInitiator from "../../utils/like-button-presenter";
-import FavoriteRestaurantIdb from "../../data/favorite-restaurant";
+} from '../templates/templatesRestaurants';
+import LikeButtonInitiator from '../../utils/like-button-presenter';
+import FavoriteRestaurantIdb from '../../data/favorite-restaurant';
 
 const Detail = {
   async render() {
@@ -32,20 +32,20 @@ const Detail = {
     const restaurant = await RestoData.detailRestaurant(url.id);
     console.log(restaurant.customerReviews);
 
-    const restaurantContainer = document.getElementById("restaurantDetail");
-    const likeButtonContainer = document.getElementById("likeButtonContainer");
-    const restaurantReview = document.getElementById("restaurant-review");
+    const restaurantContainer = document.getElementById('restaurantDetail');
+    const likeButtonContainer = document.getElementById('likeButtonContainer');
+    const restaurantReview = document.getElementById('restaurant-review');
 
-    const form = document.getElementById("formReview");
+    const form = document.getElementById('formReview');
     restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
     likeButtonContainer.innerHTML = createLikeButtonTemplate();
     restaurantReview.innerHTML = createReviewTemplate(
-      restaurant.customerReviews
+      restaurant.customerReviews,
     );
 
-    form.addEventListener("submit", async (e) => {
-      const nama = document.getElementById("namaReview").value;
-      const pesan = document.getElementById("pesanReview").value;
+    form.addEventListener('submit', async (e) => {
+      const nama = document.getElementById('namaReview').value;
+      const pesan = document.getElementById('pesanReview').value;
       const data = {
         id: url.id,
         name: nama,
@@ -62,7 +62,7 @@ const Detail = {
     });
 
     LikeButtonInitiator.init({
-      likeButtonContainer: document.getElementById("likeButtonContainer"),
+      likeButtonContainer: document.getElementById('likeButtonContainer'),
       favoriteRestaurants: FavoriteRestaurantIdb,
       restaurant: {
         id: restaurant.id,

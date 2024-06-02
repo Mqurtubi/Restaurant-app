@@ -1,10 +1,10 @@
-const { merge } = require("webpack-merge");
-const common = require("./webpack.common");
-const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
+const { merge } = require('webpack-merge');
+const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
+const common = require('./webpack.common');
 
 module.exports = merge(common, {
-  mode: "production",
-  devtool: "source-map",
+  mode: 'production',
+  devtool: 'source-map',
   module: {
     rules: [
       {
@@ -12,9 +12,9 @@ module.exports = merge(common, {
         exclude: /node_modules/,
         use: [
           {
-            loader: "babel-loader",
+            loader: 'babel-loader',
             options: {
-              presets: ["@babel/preset-env"],
+              presets: ['@babel/preset-env'],
             },
           },
         ],
@@ -23,24 +23,22 @@ module.exports = merge(common, {
   },
   plugins: [
     new WorkboxWebpackPlugin.GenerateSW({
-      swDest: "sw.bundle.js",
+      swDest: 'sw.bundle.js',
       runtimeCaching: [
         {
-          urlPattern: ({ url }) =>
-            url.href.startsWith("https://restaurant-api.dicoding.dev"),
-          handler: "StaleWhileRevalidate",
+          urlPattern: ({ url }) => url.href.startsWith('https://restaurant-api.dicoding.dev'),
+          handler: 'StaleWhileRevalidate',
           options: {
-            cacheName: "restodb-api",
+            cacheName: 'restodb-api',
           },
         },
         {
-          urlPattern: ({ url }) =>
-            url.href.startsWith(
-              "https://restaurant-api.dicoding.dev/images/medium/<pictureId>"
-            ),
-          handler: "StaleWhileRevalidate",
+          urlPattern: ({ url }) => url.href.startsWith(
+            'https://restaurant-api.dicoding.dev/images/medium/<pictureId>',
+          ),
+          handler: 'StaleWhileRevalidate',
           options: {
-            cacheName: "restodb-image-api",
+            cacheName: 'restodb-image-api',
           },
         },
       ],

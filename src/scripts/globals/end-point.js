@@ -1,4 +1,4 @@
-import CONFIG from "./CONFIG";
+import CONFIG from './CONFIG';
 
 const API_ENDPOINT = {
   LIST_RESTAURANT: `${CONFIG.BASE_URL}/list`,

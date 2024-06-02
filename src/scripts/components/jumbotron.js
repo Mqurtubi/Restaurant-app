@@ -1,8 +1,9 @@
 class Jumbtron extends HTMLElement {
   constructor() {
     super();
-    this._style = document.createElement("style");
+    this._style = document.createElement('style');
   }
+
   _updateStyle() {
     this._style.textContent = `
     #jumbotron img{
@@ -13,12 +14,15 @@ class Jumbtron extends HTMLElement {
     }
     `;
   }
+
   connectedCallback() {
     this.render();
   }
+
   _emptyContent() {
-    this.innerHTML = "";
+    this.innerHTML = '';
   }
+
   render() {
     this._emptyContent();
     this._updateStyle();
@@ -39,5 +43,5 @@ class Jumbtron extends HTMLElement {
     </div>`;
   }
 }
-customElements.define("jumbotron-img", Jumbtron);
+customElements.define('jumbotron-img', Jumbtron);
 export default Jumbtron;

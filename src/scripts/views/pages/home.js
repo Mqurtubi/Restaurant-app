@@ -1,7 +1,8 @@
-import RestoResource from "../../data/restoData";
-import "../../components/restaurant-list.js";
-import "../../components/restaurant-item.js";
-import "../../components/jumbotron.js";
+import RestoResource from '../../data/restoData';
+import '../../components/restaurant-list.js';
+import '../../components/restaurant-item.js';
+import '../../components/jumbotron.js';
+
 const RestaurantItem = {
   async render() {
     return `
@@ -24,11 +25,11 @@ const RestaurantItem = {
   async afterRender() {
     (() => {
       setTimeout(async () => {
-        const loading = document.querySelector("loading-animasi");
-        loading.style.display = "none";
+        const loading = document.querySelector('loading-animasi');
+        loading.style.display = 'none';
         const data = await RestoResource.listRestaurant();
-        const restaurantList = document.querySelector("restaurant-list");
-        restaurantList.style.display = "grid";
+        const restaurantList = document.querySelector('restaurant-list');
+        restaurantList.style.display = 'grid';
         restaurantList.setRestaurantList(data);
         console.log(data);
       }, 5000);

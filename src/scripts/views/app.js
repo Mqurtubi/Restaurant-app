@@ -1,14 +1,19 @@
-import routes from "../routes/routes";
-import UrlParser from "../routes/url-parser";
-import DrawerInitiator from "../utils/drawer-initiator";
+/* eslint-disable no-underscore-dangle */
+import routes from '../routes/routes';
+import UrlParser from '../routes/url-parser';
+import DrawerInitiator from '../utils/drawer-initiator';
+
 class App {
-  constructor({ button, drawer, content, exit }) {
+  constructor({
+    button, drawer, content, exit,
+  }) {
     this._content = content;
     this._drawer = drawer;
     this._button = button;
     this._exit = exit;
     this._initialAppShell();
   }
+
   _initialAppShell() {
     DrawerInitiator.init({
       button: this._button,
@@ -17,15 +22,16 @@ class App {
       exit: this._exit,
     });
   }
+
   async renderPage() {
     const url = UrlParser.parseActiveUrlWithCombiner();
     const page = routes[url];
     this._content.innerHTML = await page.render();
     await page.afterRender();
-    const skipLinkElem = document.querySelector("#skip");
-    skipLinkElem.addEventListener("click", (event) => {
+    const skipLinkElem = document.querySelector('#skip');
+    skipLinkElem.addEventListener('click', (event) => {
       event.preventDefault();
-      document.querySelector("#mainContent").focus();
+      document.querySelector('#mainContent').focus();
     });
   }
 }
